@@ -1,0 +1,456 @@
+{
+  "schema": "cinderia-verified-rules/v1",
+  "pilot": true,
+  "source": {
+    "finding": "CODE-VERIFIED-FINDINGS-KO.md",
+    "date": "2026-11-17",
+    "game": "0.6.12b"
+  },
+  "rules": [
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "一敲三响",
+      "status": [
+        "숨겨진 연계"
+      ],
+      "true_tags": [
+        "트리거: 重击"
+      ],
+      "trigger_conditions": "重击 태그가 붙은 공격 시 소환 게이지 20(강화 10)을 소모해 구슬 3개를 생성.",
+      "allowed_sources": [
+        "기본 3타 小绿a3",
+        "진동 강타 변형 小绿a3+1回旋砸",
+        "묵직한 일격 小绿a3.7超级重砸"
+      ],
+      "excluded_sources": [
+        "곰의 분노의 강타",
+        "무거운 닻",
+        "흙 풀기",
+        "용의 낙하"
+      ],
+      "replacement_or_child": "구슬 小绿3个球(普攻) → 자식 폭발 小绿b1爆炸(能量弹)",
+      "original_code": "강타라는 설명문이 아니라 重击 태그 3종에만 반응. 구슬 자체는 에너지탄 태그가 없고 자식 폭발에 있음.",
+      "patched_runtime": "소환 게이지 조건과 트리거는 별도 수정 근거 없음.",
+      "observed_logs": "294/350회 생성 관측(조건 불충족 가능). 질풍 반복 강타에서도 삼중 울림 발동 관측.",
+      "uncertainty": "구슬이 적을 안 맞혔을 때 지형 충돌 폭발이 생기는지는 미확인.",
+      "evidence": [
+        "[코드] §1, §13-B",
+        "[로그] §2, §4"
+      ],
+      "synergy": [
+        {
+          "id": "地鸣",
+          "type": "실제 연계",
+          "label": "자식 폭발이 땅울림 대상"
+        },
+        {
+          "id": "强烈震感",
+          "type": "간접 연계",
+          "label": "땅울림이 만든 지진 첫 타에 적용"
+        }
+      ],
+      "enhanced": "both"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "地鸣",
+      "status": [
+        "숨겨진 연계"
+      ],
+      "true_tags": [
+        "트리거: 能量弹",
+        "실행: 子弹消失时"
+      ],
+      "trigger_conditions": "能量弹 태그의 탄·폭발이 사라질 때 36%(강화 50%)로 지진 생성.",
+      "allowed_sources": [
+        "자연의 숨결 폭발",
+        "삼중 울림의 자식 폭발",
+        "자연의 격류",
+        "빠른 성장의 폭발",
+        "숲의 환영 폭발",
+        "바람의 인도 관련 폭발"
+      ],
+      "excluded_sources": [
+        "자연의 숨결 본탄 小绿b1(태그 없음)",
+        "삼중 울림 구슬 小绿3个球 자체(태그 普攻)",
+        "갈라지는 싹 본탄 小绿分裂b1"
+      ],
+      "replacement_or_child": "小绿通用1次余震(地震)를 생성.",
+      "original_code": "탄 명중 때가 아니라 해당 스킬의 子弹消失时 타이밍에서 확인. 소환수 올빼미 회오리의 적용은 별도 미확인.",
+      "patched_runtime": "별도 수정 근거 없음.",
+      "observed_logs": "땅울림 기본 404/1122(36.0%), 강화 76/153(49.7%) 관측.",
+      "uncertainty": "올빼미가 만든 能量弹 회오리가 주인공의 탄 소멸 이벤트로 전달되는지는 미확인.",
+      "evidence": [
+        "[코드] §4, §13-B",
+        "[로그] §4"
+      ],
+      "synergy": [
+        {
+          "id": "一敲三响",
+          "type": "실제 연계",
+          "label": "삼중 울림 자식 폭발이 생성 경로"
+        },
+        {
+          "id": "强烈震感",
+          "type": "실제 연계",
+          "label": "생성된 地震의 첫 타 추가 피해"
+        }
+      ],
+      "enhanced": "both"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "强烈震感",
+      "status": [
+        "원본게임버그",
+        "수정모드보정"
+      ],
+      "true_tags": [
+        "트리거: 地震",
+        "지진 첫 타만"
+      ],
+      "trigger_conditions": "地震 태그를 가진 스킬의 첫 타격에 최대 HP 비율 피해 추가.",
+      "allowed_sources": [
+        "땅울림이 만든 지진",
+        "태그를 가진 대지진·지진 관련 자식 스킬",
+        "곰 내려찍기 본체 小绿的熊跳砸(태그 地震)"
+      ],
+      "excluded_sources": [
+        "대지진 본체 小绿龙龟原地大",
+        "대지 균열 본체 小绿地裂",
+        "곰 분노의 강타 본체 小绿的熊地震"
+      ],
+      "replacement_or_child": "지진 첫 타에 血上限加伤害 추가.",
+      "original_code": "원본은 맞은 적이 아니라 시전자(플레이어) 최대 HP × 비율로 계산되는 버그. 툴팁 10/16%(일반), 2/3%(보스)와 다름.",
+      "patched_runtime": "PercentHpFix 적용 기록 있음. 대상 최대 HP 기반으로 바꾸는 수정 모드; 실전 보스 관측 확인.",
+      "observed_logs": "수정 후 보스 maxHP 43,200, 2% = 864 피해 관측. 수정 전은 플레이어 maxHP를 참조.",
+      "uncertainty": "모든 런에 패치가 켜져 있다고 가정하지 않음.",
+      "evidence": [
+        "[코드] §9-1, §13-B",
+        "[로그] §9-1"
+      ],
+      "synergy": [
+        {
+          "id": "地鸣",
+          "type": "실제 연계",
+          "label": "땅울림으로 만든 지진에 추가 피해"
+        },
+        {
+          "id": "一敲三响",
+          "type": "간접 연계",
+          "label": "구슬 폭발 → 땅울림 경유"
+        }
+      ],
+      "enhanced": "both"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "多重乱射",
+      "status": [
+        "설명보다 좁은 발동",
+        "숨겨진 연계",
+        "원본게임버그"
+      ],
+      "true_tags": [
+        "대상: 小绿能量弹第一段"
+      ],
+      "trigger_conditions": "해당 태그 스킬 시전 시 분열 25%(강화 28%); 일반 질풍 风怒 버프가 있을 때만 100%.",
+      "allowed_sources": [
+        "자연의 숨결 小绿b1",
+        "자연의 격류 小绿泽拉斯大",
+        "빠른 성장 小绿草地球",
+        "숲의 환영 小绿丢球召唤"
+      ],
+      "excluded_sources": [
+        "삼중 울림 구슬 小绿3个球",
+        "갈라지는 싹 탄 小绿分裂b1",
+        "질풍 반복 시전(来自风怒)",
+        "초질풍 魔卡风怒의 100% 보너스"
+      ],
+      "replacement_or_child": "연발 +2(총 3발), 피해 -35%(강화 -15%), 폭발 범위 -40%, 소환 수치 -50%.",
+      "original_code": "분열 감소 효과가 스킬별 시전 번호 겹침으로 다른 스킬에 적용되는 원본 버그 존재.",
+      "patched_runtime": "MultiShotFix 설치 기록은 있으나 이 수정 효과를 다중 난사 장착 실전에서 검증한 결과는 문서상 미확인.",
+      "observed_logs": "기존 원본 버그 로그에는 다른 스킬 피해 감소 관측. 다른 세 스킬의 분열 실전 검증은 미완.",
+      "uncertainty": "격류·빠른 성장·숲의 환영에서의 실제 분열은 훈련장 확인 필요.",
+      "evidence": [
+        "[코드] §4, §9-2, §13-B",
+        "[로그] §9-2"
+      ],
+      "synergy": [
+        {
+          "id": "辛辣",
+          "type": "대상 공유",
+          "label": "네 가지 태그 스킬에 공통 적용"
+        }
+      ],
+      "enhanced": "both"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "辛辣",
+      "status": [
+        "숨겨진 연계",
+        "미확인"
+      ],
+      "true_tags": [
+        "대상: 小绿能量弹第一段"
+      ],
+      "trigger_conditions": "태그 스킬의 탄을 8초 동안 1회(강화 2회) 튕기게 함. 열매를 먹으면 8초가 다시 시작됨.",
+      "allowed_sources": [
+        "자연의 숨결",
+        "자연의 격류",
+        "빠른 성장",
+        "숲의 환영"
+      ],
+      "excluded_sources": [
+        "삼중 울림 구슬",
+        "바람의 인도 탄"
+      ],
+      "replacement_or_child": "加弹跳次数 1/2; 자연의 숨결은 탄 소멸 시 폭발하므로 튕김이 폭발·땅울림 판정 수를 늘리지 않음.",
+      "original_code": "격류·빠른 성장·숲의 환영은 명중 시 폭발이라 튕김마다 폭발 증가 가능성[추정].",
+      "patched_runtime": "별도 수정 근거 없음.",
+      "observed_logs": "기본 숨결 폭발 횟수는 분열을 제외하고 탄당 1회와 일치. 튕김 실제 횟수 직접 계측은 없음.",
+      "uncertainty": "나머지 세 스킬의 튕김 시 폭발 증가·피해 기대값은 미확인.",
+      "evidence": [
+        "[코드] §4, §13-B",
+        "[로그] §4",
+        "[추정] §13-B"
+      ],
+      "synergy": [
+        {
+          "id": "多重乱射",
+          "type": "대상 공유",
+          "label": "네 가지 에너지탄 1단계 태그 스킬"
+        }
+      ],
+      "enhanced": "both"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "缠风",
+      "status": [
+        "설명보다 좁은 발동"
+      ],
+      "true_tags": [
+        "트리거: 横扫"
+      ],
+      "trigger_conditions": "횡쓸기 태그 첫 적중 때 32%(강화 48%)로 일반 질풍 획득.",
+      "allowed_sources": [
+        "기본 1타 小绿a1",
+        "기본 2타 小绿a2",
+        "간소화 합친 휩쓸기 小绿a改合并扫"
+      ],
+      "excluded_sources": [
+        "야성 각성 발톱",
+        "야성 상태 발톱",
+        "인도",
+        "비화 습격",
+        "강타",
+        "지진·에너지탄"
+      ],
+      "replacement_or_child": "일반 질풍은 다음 좌클릭 공격 1회 복제. 질풍 증폭이 있으면 총 3회.",
+      "original_code": "그림과 이름이 아니라 横扫 태그로 판정. 발톱은 普攻 또는 爪击만 보유.",
+      "patched_runtime": "별도 수정 근거 없음.",
+      "observed_logs": "같은 전투에서 야성 각성 발톱 493회 → 휘감는 바람 발동 0; 기본 휩쓸기 52회 → 17회.",
+      "uncertainty": "해당 실측은 특정 세션 표본이며 전투 전체 기대값은 별도 실험 필요.",
+      "evidence": [
+        "[코드] §2, §13-B",
+        "[로그] §13-B"
+      ],
+      "synergy": [
+        {
+          "id": "兽性觉醒",
+          "type": "연계 충돌",
+          "label": "발톱 교체로 횡쓸기 트리거가 줄어듦"
+        },
+        {
+          "id": "风暴复诵",
+          "type": "조건부 연계",
+          "label": "얻은 일반 질풍이 초질풍으로 전환될 수 있음"
+        }
+      ],
+      "enhanced": "both"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "风暴复诵",
+      "status": [
+        "설명보다 좁은 발동",
+        "미확인"
+      ],
+      "true_tags": [
+        "换buff: 风怒 → 魔卡风怒"
+      ],
+      "trigger_conditions": "일반 질풍을 획득하는 시점에 22%(강화 34%)로 초질풍으로 바꿈.",
+      "allowed_sources": [
+        "일반 질풍을 생성하는 카드·버프"
+      ],
+      "excluded_sources": [
+        "초질풍은 일반 질풍의 다음 좌클릭 복제가 아니라 스킬 카드 재시전",
+        "초질풍 중 다중 난사 100% 분열 아님"
+      ],
+      "replacement_or_child": "초질풍은 액티브 스킬 카드 다음 1장을 재시전. 일반 질풍 획득 시 연결 효과는 원본에서 생략될 수 있음.",
+      "original_code": "원본에서는 폭풍 반향이 질풍을 초질풍으로 전환하는 단계에서 风怒 버프 생성이 생략되어 바람 방패·바람의 공명의 일반 질풍 획득 연결이 발동되지 않음. 이 구조가 의도된 것인지 버그인지는 미확인(버그 후보).",
+      "patched_runtime": "WindfuryLinkFix 0.1.0 작성 및 정적 검사 기록. 게임 내 실제 동작·현재 설치 여부는 미확인.",
+      "observed_logs": "해당 수정 모드 적용 후 효과에 대한 실전 검증 기록 없음.",
+      "uncertainty": "기획 의도(버그 여부)와 WindfuryLinkFix 실제 게임 동작, 현재 설치 여부는 미확인.",
+      "evidence": [
+        "[코드] §3, §9-3, §13-B",
+        "[추정] §9-3"
+      ],
+      "synergy": [
+        {
+          "id": "缠风",
+          "type": "조건부 연계",
+          "label": "휘감는 바람이 제공한 일반 질풍을 전환"
+        },
+        {
+          "id": "多重乱射",
+          "type": "연계 주의",
+          "label": "초질풍은 분열 100% 조건이 아님"
+        }
+      ],
+      "enhanced": "both"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "亲力亲为",
+      "status": [
+        "설명보다 좁은 발동"
+      ],
+      "true_tags": [
+        "대상: △左键"
+      ],
+      "trigger_conditions": "표식이 붙은 적에게 좌클릭 계열 스킬이 주는 피해의 받는 피해 계수를 +0.35(강화 +0.6).",
+      "allowed_sources": [
+        "좌클릭 콤보",
+        "콤보 단계 교체 스킬",
+        "해당 좌클릭 스킬의 자식·대체 스킬"
+      ],
+      "excluded_sources": [
+        "아이템·소환수의 독립 트리거 피해",
+        "일반적인 모든 근접 피해"
+      ],
+      "replacement_or_child": "표식 적에게 추가 받는 피해 계수 버프. 다른 취약 계수와 합산.",
+      "original_code": "'근접 피해'를 거리 판정 전체로 해석하면 틀림. 표식은 동시에 한 대상, 5초 유지.",
+      "patched_runtime": "별도 수정 근거 없음.",
+      "observed_logs": "이 로그만으로 카드 제거 시 DPS 감소량 확정 불가.",
+      "uncertainty": "개별 자식 스킬이 △左键 범주에 포함되는지는 실제 스킬 출처에 의존.",
+      "evidence": [
+        "[코드] §7, §13-B"
+      ],
+      "synergy": [],
+      "enhanced": "both"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "兽性觉醒",
+      "status": [
+        "설명보다 좁은 발동",
+        "숨겨진 연계"
+      ],
+      "true_tags": [
+        "대체 발톱: 普攻만"
+      ],
+      "trigger_conditions": "근처 늑대 존재 시 휩쓸기를 발톱 연타로 대체. 대체 발톱은 横扫·爪击 태그가 없음.",
+      "allowed_sources": [
+        "발톱 자체 공격은 가능"
+      ],
+      "excluded_sources": [
+        "휘감는 바람의 横扫 발동",
+        "속박 휩쓸기·비상 발걸음의 横扫 조건",
+        "사나운 발톱의 爪击 조건"
+      ],
+      "replacement_or_child": "小绿a改2爪击1~4(普攻).",
+      "original_code": "단어는 발톱·휩쓸기이지만 실제 태그는 普攻뿐. 해당 계열 트리거와 호환 안 됨.",
+      "patched_runtime": "문구 수정 모드 StatTooltipFix 0.5.0 설치 기록; 태그 보정 모드 설치 근거 없음.",
+      "observed_logs": "야성 각성 발톱 493회 중 휘감는 바람 발동 0회(해당 전투 12개).",
+      "uncertainty": "발톱이 강타 질풍 복제를 실제로 받는지는 별도 검증 필요.",
+      "evidence": [
+        "[코드] §13-B, §13-D",
+        "[로그] §13-B"
+      ],
+      "synergy": [
+        {
+          "id": "缠风",
+          "type": "연계 충돌",
+          "label": "발톱은 횡쓸기 태그가 없어 질풍을 만들지 못함"
+        }
+      ],
+      "enhanced": "both"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "突袭指令",
+      "status": [
+        "설명보다 좁은 발동"
+      ],
+      "true_tags": [
+        "대체 스킬: 技能狼的攻击"
+      ],
+      "trigger_conditions": "자연의 숨결 小绿b1을 늑대 돌진 小绿冲锋狗로 교체.",
+      "allowed_sources": [
+        "늑대 관련 技能狼的攻击 연동"
+      ],
+      "excluded_sources": [
+        "자연의 숨결의 小绿能量弹第一段 조건",
+        "에너지탄 폭발 기반 땅울림",
+        "다중 난사·매콤함·작은 가시공"
+      ],
+      "replacement_or_child": "换技能 小绿b1 = 小绿冲锋狗. 이 스킬의 태그는 技能狼的攻击만.",
+      "original_code": "자연의 숨결을 늑대 돌진으로 바꾼 시전에는 에너지탄 태그가 없음. 원본 설명의 비강화 재사용 대기시간은 11.5초지만 코드 데이터는 CD11(11초)이며 강화판 8.5초는 설명과 일치함(§13-H).",
+      "patched_runtime": "별도 수정 근거 없음.",
+      "observed_logs": "대체 빈도와 연계 실측 미확인.",
+      "uncertainty": "늑대 돌진 교체 주기와 전투 중 최종 재사용 대기시간은 실측 미확인. 코드의 CD11과 툴팁 11.5초 차이는 별도 표기.",
+      "evidence": [
+        "[코드] §13-D",
+        "[추정] §13-D",
+        "[코드] §13-H"
+      ],
+      "synergy": [
+        {
+          "id": "多重乱射",
+          "type": "연계 충돌",
+          "label": "에너지탄 1단계 태그 제거"
+        },
+        {
+          "id": "地鸣",
+          "type": "연계 충돌",
+          "label": "숨결 폭발 경로 대체"
+        }
+      ],
+      "enhanced": "both"
+    }
+  ],
+  "revision_note": "2026-11-17 release review: windfury bug candidate status corrected; Rush Command base tooltip 11.5s vs data CD11 noted."
+}
