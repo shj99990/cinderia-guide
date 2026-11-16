@@ -1,10 +1,16 @@
 {
   "schema": "cinderia-verified-rules/v1",
-  "pilot": true,
+  "pilot": false,
   "source": {
     "finding": "CODE-VERIFIED-FINDINGS-KO.md",
     "date": "2026-11-17",
-    "game": "0.6.12b"
+    "game": "0.6.12b",
+    "last_checked_mirror": "2026-11-17 05:34",
+    "sections_added": [
+      "§13-H",
+      "§13-I",
+      "§13-J"
+    ]
   },
   "rules": [
     {
@@ -450,7 +456,559 @@
         }
       ],
       "enhanced": "both"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "夜空测距",
+      "status": [
+        "강화 효과 연결 누락"
+      ],
+      "true_tags": [
+        "부엉이 조건",
+        "강화판 하위 버프 연결"
+      ],
+      "trigger_conditions": "부엉이가 전장에 있을 때 에너지탄 피해와 치명타 확률 증가.",
+      "allowed_sources": [
+        "기본판 +50% 피해 / +12% 치명타",
+        "강화판 설명 +75% / +18%"
+      ],
+      "excluded_sources": [
+        "강화판 전용 버프 小绿抛物线变高+ 미연결"
+      ],
+      "replacement_or_child": "",
+      "original_code": "강화판 장착 시에도 기본 버프 小绿抛物线变高를 참조하므로 코드상 +50% / +12%에 연결된다.",
+      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "observed_logs": "AutoLab에서 강화판 장착으로 생성된 버프의 기본판 하위 연결 확인. 실제 피해 숫자 측정 전.",
+      "uncertainty": "+ 값으로 바뀌는 별도 경로가 확인되지 않았으나 발동 순간 실측은 없음.",
+      "evidence": [
+        "[코드] §13-H A",
+        "[로그: 장착 시 버프 데이터] §13-H E-1"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "狂怒",
+      "status": [
+        "강화 효과 연결 누락"
+      ],
+      "true_tags": [
+        "피격 시 격노",
+        "강화판 버프 연결"
+      ],
+      "trigger_conditions": "자신 또는 곰 피격으로 곰 격노 발동.",
+      "allowed_sources": [
+        "기본판 공격 속도 +120%",
+        "강화판 설명 +180%"
+      ],
+      "excluded_sources": [
+        "강화판 버프 熊狂暴+ 미연결"
+      ],
+      "replacement_or_child": "",
+      "original_code": "강화판에서 생성하는 버프가 기본판 熊狂暴(1.2)에 연결된다. 저체력 격노에서도 기본판을 참조.",
+      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "observed_logs": "AutoLab에서 강화판 장착 시 기본판 버프 연결을 확인. 실제 공격 속도 실측 전.",
+      "uncertainty": "발동 순간의 공격 속도는 미측정.",
+      "evidence": [
+        "[코드] §13-H A",
+        "[로그: 장착 시 버프 데이터] §13-H E-1"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "风中陨落",
+      "status": [
+        "강화 효과 연결 누락"
+      ],
+      "true_tags": [
+        "적 착지 시",
+        "강화판 스킬 연결"
+      ],
+      "trigger_conditions": "띄워진 적 착지 시 추가 피해.",
+      "allowed_sources": [
+        "기본판 피해 50",
+        "강화판 설명 피해 90"
+      ],
+      "excluded_sources": [
+        "강화판 스킬 被击飞的掉血+ 미참조"
+      ],
+      "replacement_or_child": "",
+      "original_code": "강화판 카드가 착지 피해 스킬 기본판 被击飞的掉血를 가리켜 코드상 피해 50에 연결된다.",
+      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "observed_logs": "AutoLab 장착 버프 확인으로 판별하지 못한 항목. 발동 피해 실측 전.",
+      "uncertainty": "적에게 거는 오라 계열이라 플레이어 버프 검사로는 확인하지 못했다.",
+      "evidence": [
+        "[코드] §13-H A",
+        "[미확인] §13-H E-1"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "利齿啃咬",
+      "status": [
+        "강화 효과 일부 연결 누락"
+      ],
+      "true_tags": [
+        "늑대 물기",
+        "교체 스킬 연결"
+      ],
+      "trigger_conditions": "늑대 공격 시 물기 효과 발동.",
+      "allowed_sources": [
+        "기본판 21% / 피해 40",
+        "강화판 확률 28%와 기절 1.4초는 강화 수치"
+      ],
+      "excluded_sources": [
+        "강화판 설명 피해 56은 코드상 기본 물기 40으로 연결"
+      ],
+      "replacement_or_child": "",
+      "original_code": "강화판 확률·기절은 강화 수치지만 물기 스킬을 小绿的狗咬 기본판으로 교체한다. + 물기 스킬(피해 56)은 미연결.",
+      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "observed_logs": "AutoLab 플레이어 버프 목록에서 교체 스킬 연결 확인 불가. 강화판 효과 발동 실측 전.",
+      "uncertainty": "28%와 1.4초는 코드 연결 기준이며 실제 공격 피해는 전투 계수에 좌우된다.",
+      "evidence": [
+        "[코드] §13-H A",
+        "[미확인] §13-H E-1"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "余息回响",
+      "status": [
+        "강화 효과 일부 연결 누락"
+      ],
+      "true_tags": [
+        "자연의 숨결 회오리",
+        "호출 스킬 연결"
+      ],
+      "trigger_conditions": "자연의 숨결이 지면에 맞힌 뒤 회오리 생성.",
+      "allowed_sources": [
+        "기본판 회오리 피해 45, 발동 간격 6초",
+        "강화판 발동 간격 4초"
+      ],
+      "excluded_sources": [
+        "강화판 설명 회오리 피해 60 미연결"
+      ],
+      "replacement_or_child": "",
+      "original_code": "강화판에서 호출하는 회오리 스킬이 기본판 小绿延迟旋风抬起(피해 45)이다. + 스킬(60)은 미연결.",
+      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "observed_logs": "AutoLab에서 강화판 장착 시 기본판 회오리 스킬 호출을 확인. 발동 피해 실측 전.",
+      "uncertainty": "회오리의 실제 최종 피해는 다른 계수 영향이 있을 수 있음.",
+      "evidence": [
+        "[코드] §13-H A",
+        "[로그: 장착 시 버프 데이터] §13-H E-1"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "green",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "失魂落魄",
+      "status": [
+        "강화 효과 연결 누락"
+      ],
+      "true_tags": [
+        "매혹 종료",
+        "버프 공유"
+      ],
+      "trigger_conditions": "매혹 해제 시 주위 폭발.",
+      "allowed_sources": [
+        "기본판 폭발 피해 40",
+        "강화판 설명 폭발 피해 75"
+      ],
+      "excluded_sources": [
+        "강화용 폭발 스킬 자체가 없음"
+      ],
+      "replacement_or_child": "",
+      "original_code": "기본·강화판이 같은 버프 迷魂结束可以爆炸를 사용하고 폭발 기본 피해 40에 연결된다. + 폭발 스킬 정의는 없다.",
+      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "observed_logs": "AutoLab에서 기본·강화판이 동일한 버프를 생성함을 확인. 폭발 피해 실측 전.",
+      "uncertainty": "PlusLinkFix는 강화판 장착 중 피해를 올리는 수정으로 작성됐으나 미설치·미검증.",
+      "evidence": [
+        "[코드] §13-H A",
+        "[로그: 장착 시 버프 데이터] §13-H E-1"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "blue",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "护盾充能",
+      "status": [
+        "강화 효과 연결 누락"
+      ],
+      "true_tags": [
+        "방패 가드 후",
+        "강화판 버프 연결"
+      ],
+      "trigger_conditions": "방패 방어 성공 후 방패 치기 피해 증가.",
+      "allowed_sources": [
+        "기본판 +40%, 최대 3중첩",
+        "강화판 설명 +50%, 최대 5중첩"
+      ],
+      "excluded_sources": [
+        "강화 전용 小蓝格挡后提高盾击伤害+ (0.5, 5중첩) 미연결"
+      ],
+      "replacement_or_child": "",
+      "original_code": "강화판 카드가 기본판 버프를 참조하여 코드상 +40%, 3중첩에 연결된다.",
+      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "observed_logs": "이스다라 게임 내 실행 실험은 아직 하지 않았음.",
+      "uncertainty": "수정 모드 적용 여부와 발동 결과 수치는 미확인.",
+      "evidence": [
+        "[코드] §13-I"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "blue",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "冰龙降临",
+      "status": [
+        "강화 폭격 일부 기본판 연결"
+      ],
+      "true_tags": [
+        "폭격 변형 확률 50%",
+        "대체 스킬 연결"
+      ],
+      "trigger_conditions": "전투 시작 및 주기적으로 얼음 용 폭격 소환.",
+      "allowed_sources": [
+        "강화 주 스킬: 서리 길 9초",
+        "50% 확률로 반대 방향 폭격 변형"
+      ],
+      "excluded_sources": [
+        "반대 방향 변형이 기본판 스킬(길 7.5초)"
+      ],
+      "replacement_or_child": "小蓝冰龙轰炸+ → 50%에서 小蓝冰龙轰炸反向(기본판)",
+      "original_code": "강화 주 스킬 小蓝冰龙轰炸+는 + 버전이지만, 반대 방향 발사로 교체될 때 기본 小蓝冰龙轰炸反向을 사용한다. 확률은 코드상 50%.",
+      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "observed_logs": "게임 내 발동/방향과 폭격 횟수 실측 없음.",
+      "uncertainty": "7회/5회 폭격 횟수는 어떤 탄 데이터에 있는지 미확인. 반대 방향 확률은 코드 근거이지 실측 비율이 아님.",
+      "evidence": [
+        "[코드] §13-I",
+        "[미확인] §13-I"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "blue",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "重重砸下",
+      "status": [
+        "설명과 재사용 수치 불일치"
+      ],
+      "true_tags": [
+        "재사용 대기시간 고정값",
+        "기본·강화 동일 수치"
+      ],
+      "trigger_conditions": "방패 들기 피해 증가와 적 띄우기 대신 재사용 대기시간 증가.",
+      "allowed_sources": [
+        "기본판 설명 +1.0초",
+        "강화판 설명 +0.7초"
+      ],
+      "excluded_sources": [
+        "코드 데이터는 기본·강화 모두 固定冷却值 +1.2"
+      ],
+      "replacement_or_child": "",
+      "original_code": "코드 데이터상 양쪽 모두 고정 쿨 증가값 1.2를 더한다. 실제 쿨은 (기본 쿨+고정값)×쿨감 배율을 거쳐 +1.2초가 최종 증가량과 항상 같지는 않다.",
+      "patched_runtime": "툴팁 수치에 맞추는 수정 방향은 합의됐으나 수정 모드 반영·설치·실측은 아직 안 됨.",
+      "observed_logs": "게임 내 실제 재사용 대기시간 측정 없음.",
+      "uncertainty": "사용자는 툴팁 1.0/0.7이 의도라고 판단해 데이터 수정 방향을 정했으나 문서 기준 수정 모드 반영은 미착수.",
+      "evidence": [
+        "[코드] §13-I",
+        "[추정: 의도 판단] §13-I"
+      ],
+      "synergy": [],
+      "enhanced": "both"
+    },
+    {
+      "hero": "blue",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "冻痕加深",
+      "status": [
+        "강화 수치 불일치"
+      ],
+      "true_tags": [
+        "동상 중첩",
+        "강화판 수치"
+      ],
+      "trigger_conditions": "동상 추가 중첩 상한 증가.",
+      "allowed_sources": [
+        "기본판 +3중첩",
+        "강화판 설명 +8중첩"
+      ],
+      "excluded_sources": [
+        "강화판 데이터 값은 7"
+      ],
+      "replacement_or_child": "",
+      "original_code": "강화판 버프 데이터상 추가 중첩 값은 7로, 기존 카드 설명 8과 다르다.",
+      "patched_runtime": "문구 수정 8→7로 방향 합의. 실제 모드 반영·설치 기록 없음.",
+      "observed_logs": "게임 내 최종 중첩 상한 실측 없음.",
+      "uncertainty": "사용자는 7이 의도라고 판단해 데이터는 두고 문구를 8→7로 수정하기로 했으나 해당 시점 수정 모드는 미반영.",
+      "evidence": [
+        "[코드] §13-I",
+        "[추정: 의도 판단] §13-I"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "red",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "飞索",
+      "status": [
+        "강화 효과 일부 연결 누락"
+      ],
+      "true_tags": [
+        "비도 적 연결",
+        "강화판 하위 버프"
+      ],
+      "trigger_conditions": "비도 명중 적 연결 효과.",
+      "allowed_sources": [
+        "강화판 재사용 대기시간 3.5초 적용",
+        "기본판 연결 지속 3초"
+      ],
+      "excluded_sources": [
+        "강화판 설명 연결 4초는 미연결"
+      ],
+      "replacement_or_child": "",
+      "original_code": "강화판 재사용은 3.5초 값이지만 연결 버프는 기본판 铁索连环◆3을 쓴다. + 버프는 铁索连环◆4로 따로 존재.",
+      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "observed_logs": "루 게임 내 실제 연결 유지 시간 실측 없음.",
+      "uncertainty": "루=小红 매핑은 findings에서 [추정]으로 둠. 연결 3초는 코드상 값.",
+      "evidence": [
+        "[코드] §13-I",
+        "[추정: 캐릭터 태그 대응] §0"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "red",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "重刃压制",
+      "status": [
+        "쇠약 효과 연결 누락"
+      ],
+      "true_tags": [
+        "베기 피해 증가",
+        "쇠약 버프 미연결"
+      ],
+      "trigger_conditions": "베기 피해 증가와 쇠약 부여 설명.",
+      "allowed_sources": [
+        "기본판 피해 +35% / 강화판 +50%",
+        "쇠약 설명 기본판 25% / 강화판 33%, 6초"
+      ],
+      "excluded_sources": [
+        "쇠약을 거는 砍带残废 / 砍带残废+ 버프가 카드에서 참조되지 않음"
+      ],
+      "replacement_or_child": "",
+      "original_code": "두 카드 모두 피해 증가 砍加攻击(+)만 연결. 쇠약 버프 砍带残废(+)는 카드·버프·스킬 데이터에서 참조되지 않음.",
+      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "observed_logs": "루 게임 내 실제 쇠약 발동 여부 미실측.",
+      "uncertainty": "코드 하드코딩까지 완전 배제하지는 못했으며 한국어 카드명 정식 번역도 미확인.",
+      "evidence": [
+        "[코드] §13-I",
+        "[미확인: 게임 실측] §13-I"
+      ],
+      "synergy": [],
+      "enhanced": "both"
+    },
+    {
+      "hero": "blue",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "凿冰",
+      "status": [
+        "스킬 교체로 태그 단절"
+      ],
+      "true_tags": [
+        "교체 후 左键",
+        "盾击 태그 상실"
+      ],
+      "trigger_conditions": "방패 강타를 지면 찌르기로 교체.",
+      "allowed_sources": [
+        "교체 후 스킬 小蓝a4.8戳地: 左键 태그"
+      ],
+      "excluded_sources": [
+        "방패 강타 盾击 태그 강화"
+      ],
+      "replacement_or_child": "방패 강타 → 지면 찌르기 小蓝a4.8戳地",
+      "original_code": "교체 후 스킬의 태그가 左键뿐이므로 원래 방패 강타에 적용되던 盾击 조건 강화는 걸리지 않는다.",
+      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "observed_logs": "코드·태그 대조이며 게임 내 연계 실측 없음.",
+      "uncertainty": "설명문 자체는 공격 교체를 명시하므로 오류로 단정하지 않음.",
+      "evidence": [
+        "[코드] §13-J"
+      ],
+      "synergy": [],
+      "enhanced": "both"
+    },
+    {
+      "hero": "blue",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "龙族呼吸",
+      "status": [
+        "스킬 교체로 태그 단절"
+      ],
+      "true_tags": [
+        "교체 후 태그 없음",
+        "盾击 태그 상실"
+      ],
+      "trigger_conditions": "방패 강타를 얼음 숨결로 교체.",
+      "allowed_sources": [
+        "교체 후 小蓝a3+喷冰: 태그 없음"
+      ],
+      "excluded_sources": [
+        "방패 강타 盾击 태그 강화"
+      ],
+      "replacement_or_child": "방패 강타 → 얼음 숨결 小蓝a3+喷冰",
+      "original_code": "새로 생성되는 얼음 숨결 스킬에는 盾击 태그가 없어 기존 방패 강타 강화가 적용되지 않는다.",
+      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "observed_logs": "코드·태그 대조이며 게임 내 연계 실측 없음.",
+      "uncertainty": "스킬 교체로 인한 구조이며 개발자 실수·버그라고 단정하지 않음.",
+      "evidence": [
+        "[코드] §13-J"
+      ],
+      "synergy": [],
+      "enhanced": "both"
+    },
+    {
+      "hero": "red",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "瞬闪",
+      "status": [
+        "스킬 교체로 태그 전환"
+      ],
+      "true_tags": [
+        "교체 후 戳刺 / 近战"
+      ],
+      "trigger_conditions": "마지막 십자 베기를 충전 찌르기로 교체.",
+      "allowed_sources": [
+        "교체 후 태그 戳刺 / 近战",
+        "찌르기 태그 강화"
+      ],
+      "excluded_sources": [
+        "십자 베기 十字斩 태그 강화"
+      ],
+      "replacement_or_child": "십자 베기 → 충전 찌르기 小红a5+一闪位移",
+      "original_code": "스킬 小红a5+一闪位移는 十字斩 대신 戳刺·近战을 갖는다. 기존 십자 베기 강화는 적용되지 않고 찌르기 강화는 적용 가능하다.",
+      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "observed_logs": "실전 측정 전; 데이터·태그 구조 확인.",
+      "uncertainty": "루=小红 매핑은 [추정]. 태그 적용은 코드 구조 기준.",
+      "evidence": [
+        "[코드] §13-J",
+        "[추정: 캐릭터 태그 대응] §0"
+      ],
+      "synergy": [],
+      "enhanced": "both"
+    },
+    {
+      "hero": "red",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "试探",
+      "status": [
+        "스킬 교체로 태그 전환"
+      ],
+      "true_tags": [
+        "교체 후 飞刀"
+      ],
+      "trigger_conditions": "첫 찌르기를 비도 두 개로 교체.",
+      "allowed_sources": [
+        "교체 후 태그 飞刀"
+      ],
+      "excluded_sources": [
+        "찌르기 戳刺 태그 강화"
+      ],
+      "replacement_or_child": "첫 찌르기 → 비도 2개 小红a1+连投",
+      "original_code": "스킬 小红a1+连投은 飞刀 태그만 가진다. 원래 찌르기 강화는 적용되지 않는다.",
+      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "observed_logs": "실전 측정 전; 코드상 태그 대조.",
+      "uncertainty": "루=小红 매핑은 [추정].",
+      "evidence": [
+        "[코드] §13-J",
+        "[추정: 캐릭터 태그 대응] §0"
+      ],
+      "synergy": [],
+      "enhanced": "both"
+    },
+    {
+      "hero": "red",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "剑花",
+      "status": [
+        "스킬 교체로 태그 전환"
+      ],
+      "true_tags": [
+        "강화판 교체 후 十字斩 / 近战"
+      ],
+      "trigger_conditions": "첫 찌르기를 2연타 십자 베기로 교체(강화판).",
+      "allowed_sources": [
+        "교체 후 태그 十字斩 / 近战",
+        "십자 베기 강화"
+      ],
+      "excluded_sources": [
+        "찌르기 戳刺 태그 강화"
+      ],
+      "replacement_or_child": "첫 찌르기 → 2연타 십자 베기 小红a1+剑花",
+      "original_code": "검화+가 만드는 小红a1+剑花는 十字斩·近战 태그이므로 찌르기 강화 대상이 아니라 십자 베기 강화 대상이다.",
+      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "observed_logs": "실전 측정 전; 코드상 태그 대조.",
+      "uncertainty": "findings는 검화+ 교체 스킬에 대해 설명하며, 기본판까지 같은 태그 적용이라고 일반화하지 않음.",
+      "evidence": [
+        "[코드] §13-J",
+        "[추정: 캐릭터 태그 대응] §0"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
     }
   ],
-  "revision_note": "2026-11-17 release review: windfury bug candidate status corrected; Rush Command base tooltip 11.5s vs data CD11 noted."
+  "revision_note": "Added 17 cards with source-based findings (Uma +6, Isdara +6, Lu [small red character assumption] +5); separated code, mod, AutoLab equip data and untested gameplay. Stable internal IDs."
 }
