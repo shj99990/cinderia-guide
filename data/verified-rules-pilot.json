@@ -5,12 +5,14 @@
     "finding": "CODE-VERIFIED-FINDINGS-KO.md",
     "date": "2026-11-17",
     "game": "0.6.12b",
-    "last_checked_mirror": "2026-11-17 05:34",
+    "last_checked_mirror": "2026-11-17 09:55",
     "sections_added": [
       "§13-H",
       "§13-I",
-      "§13-J"
-    ]
+      "§13-J",
+      "§13-K"
+    ],
+    "release": "v1.2"
   },
   "rules": [
     {
@@ -480,9 +482,9 @@
       ],
       "replacement_or_child": "",
       "original_code": "강화판 장착 시에도 기본 버프 小绿抛物线变高를 참조하므로 코드상 +50% / +12%에 연결된다.",
-      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
       "observed_logs": "AutoLab에서 강화판 장착으로 생성된 버프의 기본판 하위 연결 확인. 실제 피해 숫자 측정 전.",
-      "uncertainty": "+ 값으로 바뀌는 별도 경로가 확인되지 않았으나 발동 순간 실측은 없음.",
+      "uncertainty": "+ 값으로 바뀌는 별도 경로가 확인되지 않았으나 발동 순간 실측은 없음. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-H A",
         "[로그: 장착 시 버프 데이터] §13-H E-1"
@@ -513,9 +515,9 @@
       ],
       "replacement_or_child": "",
       "original_code": "강화판에서 생성하는 버프가 기본판 熊狂暴(1.2)에 연결된다. 저체력 격노에서도 기본판을 참조.",
-      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
       "observed_logs": "AutoLab에서 강화판 장착 시 기본판 버프 연결을 확인. 실제 공격 속도 실측 전.",
-      "uncertainty": "발동 순간의 공격 속도는 미측정.",
+      "uncertainty": "발동 순간의 공격 속도는 미측정. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-H A",
         "[로그: 장착 시 버프 데이터] §13-H E-1"
@@ -546,9 +548,9 @@
       ],
       "replacement_or_child": "",
       "original_code": "강화판 카드가 착지 피해 스킬 기본판 被击飞的掉血를 가리켜 코드상 피해 50에 연결된다.",
-      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
       "observed_logs": "AutoLab 장착 버프 확인으로 판별하지 못한 항목. 발동 피해 실측 전.",
-      "uncertainty": "적에게 거는 오라 계열이라 플레이어 버프 검사로는 확인하지 못했다.",
+      "uncertainty": "적에게 거는 오라 계열이라 플레이어 버프 검사로는 확인하지 못했다. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-H A",
         "[미확인] §13-H E-1"
@@ -579,9 +581,9 @@
       ],
       "replacement_or_child": "",
       "original_code": "강화판 확률·기절은 강화 수치지만 물기 스킬을 小绿的狗咬 기본판으로 교체한다. + 물기 스킬(피해 56)은 미연결.",
-      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
       "observed_logs": "AutoLab 플레이어 버프 목록에서 교체 스킬 연결 확인 불가. 강화판 효과 발동 실측 전.",
-      "uncertainty": "28%와 1.4초는 코드 연결 기준이며 실제 공격 피해는 전투 계수에 좌우된다.",
+      "uncertainty": "28%와 1.4초는 코드 연결 기준이며 실제 공격 피해는 전투 계수에 좌우된다. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-H A",
         "[미확인] §13-H E-1"
@@ -612,9 +614,9 @@
       ],
       "replacement_or_child": "",
       "original_code": "강화판에서 호출하는 회오리 스킬이 기본판 小绿延迟旋风抬起(피해 45)이다. + 스킬(60)은 미연결.",
-      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
       "observed_logs": "AutoLab에서 강화판 장착 시 기본판 회오리 스킬 호출을 확인. 발동 피해 실측 전.",
-      "uncertainty": "회오리의 실제 최종 피해는 다른 계수 영향이 있을 수 있음.",
+      "uncertainty": "회오리의 실제 최종 피해는 다른 계수 영향이 있을 수 있음. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-H A",
         "[로그: 장착 시 버프 데이터] §13-H E-1"
@@ -645,9 +647,9 @@
       ],
       "replacement_or_child": "",
       "original_code": "기본·강화판이 같은 버프 迷魂结束可以爆炸를 사용하고 폭발 기본 피해 40에 연결된다. + 폭발 스킬 정의는 없다.",
-      "patched_runtime": "PlusLinkFix 0.1.0은 우마 강화판 6장용으로 작성됐으나, findings 마지막 확인 시점에는 미설치·게임 내 효과 미확인. 도감은 수정 전 코드 연결을 설명함.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
       "observed_logs": "AutoLab에서 기본·강화판이 동일한 버프를 생성함을 확인. 폭발 피해 실측 전.",
-      "uncertainty": "PlusLinkFix는 강화판 장착 중 피해를 올리는 수정으로 작성됐으나 미설치·미검증.",
+      "uncertainty": "PlusLinkFix는 강화판 장착 중 피해를 올리는 수정으로 작성됐으나 미설치·미검증. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-H A",
         "[로그: 장착 시 버프 데이터] §13-H E-1"
@@ -678,9 +680,9 @@
       ],
       "replacement_or_child": "",
       "original_code": "강화판 카드가 기본판 버프를 참조하여 코드상 +40%, 3중첩에 연결된다.",
-      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
       "observed_logs": "이스다라 게임 내 실행 실험은 아직 하지 않았음.",
-      "uncertainty": "수정 모드 적용 여부와 발동 결과 수치는 미확인.",
+      "uncertainty": "수정 모드 적용 여부와 발동 결과 수치는 미확인. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-I"
       ],
@@ -710,9 +712,9 @@
       ],
       "replacement_or_child": "小蓝冰龙轰炸+ → 50%에서 小蓝冰龙轰炸反向(기본판)",
       "original_code": "강화 주 스킬 小蓝冰龙轰炸+는 + 버전이지만, 반대 방향 발사로 교체될 때 기본 小蓝冰龙轰炸反向을 사용한다. 확률은 코드상 50%.",
-      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
       "observed_logs": "게임 내 발동/방향과 폭격 횟수 실측 없음.",
-      "uncertainty": "7회/5회 폭격 횟수는 어떤 탄 데이터에 있는지 미확인. 반대 방향 확률은 코드 근거이지 실측 비율이 아님.",
+      "uncertainty": "7회/5회 폭격 횟수는 어떤 탄 데이터에 있는지 미확인. 반대 방향 확률은 코드 근거이지 실측 비율이 아님. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-I",
         "[미확인] §13-I"
@@ -743,9 +745,9 @@
       ],
       "replacement_or_child": "",
       "original_code": "코드 데이터상 양쪽 모두 고정 쿨 증가값 1.2를 더한다. 실제 쿨은 (기본 쿨+고정값)×쿨감 배율을 거쳐 +1.2초가 최종 증가량과 항상 같지는 않다.",
-      "patched_runtime": "툴팁 수치에 맞추는 수정 방향은 합의됐으나 수정 모드 반영·설치·실측은 아직 안 됨.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
       "observed_logs": "게임 내 실제 재사용 대기시간 측정 없음.",
-      "uncertainty": "사용자는 툴팁 1.0/0.7이 의도라고 판단해 데이터 수정 방향을 정했으나 문서 기준 수정 모드 반영은 미착수.",
+      "uncertainty": "사용자는 툴팁 1.0/0.7이 의도라고 판단해 데이터 수정 방향을 정했으나 문서 기준 수정 모드 반영은 미착수. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-I",
         "[추정: 의도 판단] §13-I"
@@ -776,9 +778,9 @@
       ],
       "replacement_or_child": "",
       "original_code": "강화판 버프 데이터상 추가 중첩 값은 7로, 기존 카드 설명 8과 다르다.",
-      "patched_runtime": "문구 수정 8→7로 방향 합의. 실제 모드 반영·설치 기록 없음.",
+      "patched_runtime": "StatTooltipFix 0.5.2에서 강화판 설명 8→7 정정 작성·허브 등록, 미설치. 원본 게임 설명은 8, 데이터는 7.",
       "observed_logs": "게임 내 최종 중첩 상한 실측 없음.",
-      "uncertainty": "사용자는 7이 의도라고 판단해 데이터는 두고 문구를 8→7로 수정하기로 했으나 해당 시점 수정 모드는 미반영.",
+      "uncertainty": "7이 의도라는 판단은 추정이며, 문구 수정 모드 설치·게임 내 표시 확인 전.",
       "evidence": [
         "[코드] §13-I",
         "[추정: 의도 판단] §13-I"
@@ -809,9 +811,9 @@
       ],
       "replacement_or_child": "",
       "original_code": "강화판 재사용은 3.5초 값이지만 연결 버프는 기본판 铁索连环◆3을 쓴다. + 버프는 铁索连环◆4로 따로 존재.",
-      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
       "observed_logs": "루 게임 내 실제 연결 유지 시간 실측 없음.",
-      "uncertainty": "루=小红 매핑은 findings에서 [추정]으로 둠. 연결 3초는 코드상 값.",
+      "uncertainty": "루=小红 매핑은 findings에서 [추정]으로 둠. 연결 3초는 코드상 값. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-I",
         "[추정: 캐릭터 태그 대응] §0"
@@ -842,12 +844,13 @@
       ],
       "replacement_or_child": "",
       "original_code": "두 카드 모두 피해 증가 砍加攻击(+)만 연결. 쇠약 버프 砍带残废(+)는 카드·버프·스킬 데이터에서 참조되지 않음.",
-      "patched_runtime": "현재 확인된 데이터 차이에 대한 수정 모드 적용·실측 확인 없음.",
-      "observed_logs": "루 게임 내 실제 쇠약 발동 여부 미실측.",
-      "uncertainty": "코드 하드코딩까지 완전 배제하지는 못했으며 한국어 카드명 정식 번역도 미확인.",
+      "patched_runtime": "PlusLinkFix 0.2.0 작성·모드 허브 등록. 사용자가 미설치 확인. 작성·등록과 실제 게임 발동 효과 검증을 구분하며 효과 실측 전.",
+      "observed_logs": "AutoLab에서 시험용으로 카드 행에 쇠약 버프를 연결하자 장착 시 砍带残废/砍带残废+ 버프 생성 확인. 실제 공격의 쇠약 발생은 미실측.",
+      "uncertainty": "코드 하드코딩까지 완전 배제하지는 못했으며 한국어 카드명 정식 번역도 미확인. 수정판 0.2.0은 미설치이며 게임 내 동작 미검증.",
       "evidence": [
         "[코드] §13-I",
-        "[미확인: 게임 실측] §13-I"
+        "[미확인: 게임 실측] §13-I",
+        "[로그: 시험용 카드 장착 시 버프 생성] §13-I"
       ],
       "synergy": [],
       "enhanced": "both"
@@ -1008,7 +1011,168 @@
       ],
       "synergy": [],
       "enhanced": "plus"
+    },
+    {
+      "hero": "yellow",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "风暴之锤",
+      "status": [
+        "강화 효과 연결 누락 후보",
+        "미확인"
+      ],
+      "true_tags": [
+        "망치 투척으로 다음 사격 교체"
+      ],
+      "trigger_conditions": "4.5초마다 다음 사격을 망치 투척으로 변경.",
+      "allowed_sources": [
+        "실제 참조 기본판 小黄远程丢锤子: 피해 50"
+      ],
+      "excluded_sources": [
+        "미사용 강화판 小黄远程丢锤子+: 피해 72"
+      ],
+      "replacement_or_child": "사격 → 小黄远程丢锤子 (기본판)",
+      "original_code": "강화 카드가 기본판 망치 스킬 피해 50을 가리키며 강화 스킬 피해 72가 별도로 존재.",
+      "patched_runtime": "해당 리벳 항목의 신규 수정 모드 작성·설치 근거 없음. 원본 데이터 기준.",
+      "observed_logs": "해당 리벳 카드의 게임 내 효과 실측 전.",
+      "uncertainty": "툴팁에 피해 수치가 없으므로 의도와 불일치는 확정하지 않음. 실전 미검증.",
+      "evidence": [
+        "[코드] §13-K",
+        "[미확인: 실전 동작] §13-K"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "yellow",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "抵近喷射",
+      "status": [
+        "강화 효과 연결 누락 후보",
+        "미확인"
+      ],
+      "true_tags": [
+        "구르기 후 다음 사격 변경"
+      ],
+      "trigger_conditions": "구른 뒤 다음 사격이 산탄 분사로 변경; 강화 재사용 3초는 적용됨.",
+      "allowed_sources": [
+        "분사 버프 喷一下 → 小黄a3+喷子 피해 24"
+      ],
+      "excluded_sources": [
+        "미연결 강화 버프 喷一下+ → 小黄a3+喷子+ 피해 32"
+      ],
+      "replacement_or_child": "사격 → 분사 버프 喷一下 (기본판)",
+      "original_code": "재사용 3초는 강화 수치이나 분사 효과는 기본판 피해 24, 강화 효과 피해 32는 연결되지 않음.",
+      "patched_runtime": "해당 리벳 항목의 신규 수정 모드 작성·설치 근거 없음. 원본 데이터 기준.",
+      "observed_logs": "해당 리벳 카드의 게임 내 효과 실측 전.",
+      "uncertainty": "툴팁에 분사 피해 수치가 없어 결함 후보이며 확정 아님. 실제 피해 미측정.",
+      "evidence": [
+        "[코드] §13-K",
+        "[미확인: 실전 동작] §13-K"
+      ],
+      "synergy": [],
+      "enhanced": "plus"
+    },
+    {
+      "hero": "yellow",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "交流电",
+      "status": [
+        "설명과 피해 증가 수치 불일치",
+        "강화판 쇠약 효과 연결 누락"
+      ],
+      "true_tags": [
+        "연쇄 번개·벼락 피해 강화",
+        "강화판 쇠약 50% 확률"
+      ],
+      "trigger_conditions": "설명 기본 +12%/강화 +20%이지만 데이터 +15%/+25%. 강화 쇠약 50%의 changeBuff 공란.",
+      "allowed_sources": [
+        "电伤害加强: +15% (기본)",
+        "电伤害加强+: +25% (강화)",
+        "기본판 电概率带残废: 残废◆5"
+      ],
+      "excluded_sources": [
+        "강화판 电概率带残废+가 부여할 대상 changeBuff 없음"
+      ],
+      "replacement_or_child": "강화 쇠약 버프의 changeBuff 비어 있음",
+      "original_code": "피해 증가율은 기본/강화 툴팁보다 각각 3%p/5%p 큼. 강화판은 쇠약 부여 확률 50%로 설정됐으나 부여 대상 참조가 비어 있음.",
+      "patched_runtime": "해당 리벳 항목의 신규 수정 모드 작성·설치 근거 없음. 원본 데이터 기준.",
+      "observed_logs": "해당 리벳 카드의 게임 내 효과 실측 전.",
+      "uncertainty": "코드 연결 누락은 확인. 실제 적에게 쇠약이 걸리는지 게임 실측 및 별도 하드코딩 경로 검증 전.",
+      "evidence": [
+        "[코드] §13-K",
+        "[미확인: 실전 동작] §13-K"
+      ],
+      "synergy": [],
+      "enhanced": "both"
+    },
+    {
+      "hero": "yellow",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "枪托加固",
+      "status": [
+        "기절 지속 시간 수치 불일치"
+      ],
+      "true_tags": [
+        "내리치기 적중 시 기절"
+      ],
+      "trigger_conditions": "기절 확률 기본 24%/강화 38%. 툴팁 시간 1.25초이나 버프는 眩晕◆1.",
+      "allowed_sources": [
+        "기절 확률 기본 24% / 강화 38%"
+      ],
+      "excluded_sources": [
+        "설명 1.25초와 다른 데이터의 1초 지속"
+      ],
+      "replacement_or_child": "眩晕◆1",
+      "original_code": "두 카드 모두 설명 기절 1.25초와 달리 버프 데이터는 眩晕◆1(1초).",
+      "patched_runtime": "해당 리벳 항목의 신규 수정 모드 작성·설치 근거 없음. 원본 데이터 기준.",
+      "observed_logs": "해당 리벳 카드의 게임 내 효과 실측 전.",
+      "uncertainty": "기절 시간의 최종 런타임 해석과 실전 지속시간은 미측정.",
+      "evidence": [
+        "[코드] §13-K",
+        "[미확인: 실전 동작] §13-K"
+      ],
+      "synergy": [],
+      "enhanced": "both"
+    },
+    {
+      "hero": "yellow",
+      "game_version": "0.6.12b",
+      "evidence_source": "Cinderia/findings/CODE-VERIFIED-FINDINGS-KO.md",
+      "source_updated": "2026-11-17",
+      "card_id": "用尽全力",
+      "status": [
+        "치명타 확률 수치 불일치"
+      ],
+      "true_tags": [
+        "내리치기 치명타 확률 증가"
+      ],
+      "trigger_conditions": "기본판 설명 내리치기 치명타 확률 +45%, 데이터 0.5(+50%).",
+      "allowed_sources": [
+        "기본판 내리치기 치명타 확률 버프 0.5"
+      ],
+      "excluded_sources": [
+        "강화판 수치는 이번 대조 범위 밖"
+      ],
+      "replacement_or_child": "",
+      "original_code": "혼신 강타 기본판 설명 +45%와 달리 버프 데이터는 +50%.",
+      "patched_runtime": "해당 리벳 항목의 신규 수정 모드 작성·설치 근거 없음. 원본 데이터 기준.",
+      "observed_logs": "해당 리벳 카드의 게임 내 효과 실측 전.",
+      "uncertainty": "기본판만 확인. 강화판 동작으로 일반화하지 않음. 게임 실측 없음.",
+      "evidence": [
+        "[코드] §13-K",
+        "[미확인: 실전 동작] §13-K"
+      ],
+      "synergy": [],
+      "enhanced": "base"
     }
   ],
-  "revision_note": "Added 17 cards with source-based findings (Uma +6, Isdara +6, Lu [small red character assumption] +5); separated code, mod, AutoLab equip data and untested gameplay. Stable internal IDs."
+  "revision_note": "Added 17 cards with source-based findings (Uma +6, Isdara +6, Lu [small red character assumption] +5); separated code, mod, AutoLab equip data and untested gameplay. Stable internal IDs.\nv1.2: §13-K 리벳 5개 카드 검증 추가. 축전+·대지 분쇄+·앞공중제비+는 최신 정정에 따라 결함 제외. PlusLinkFix 0.2.0/StatTooltipFix 0.5.2는 작성·허브 등록/미설치. Drive 미러 2026-11-17 09:55."
 }
