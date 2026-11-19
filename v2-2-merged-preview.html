@@ -391,6 +391,7 @@ function relationshipHTML(x){
  ${opts}
  ${mechanismHTML(x)}
  ${verificationDetail(x)}
+ ${technicalCardInfo(x)}
  <div class="relation-note">여기서 <b>선행·후속</b>은 원본의 <code>preconditions / groups</code> 태그로 연결한 <b>계열 단위</b> 관계야. 복수 조건은 OR/AND를 구분하며, <code>mutex</code>가 겹치면 동시 선택할 수 없어. 카드를 반드시 특정한 1장만 골라야 한다는 의미는 아니고, 실제 보상 출현을 보증하지도 않아. 아래 ‘같은 계열’은 탐색 보조로, 검증된 전투 시너지가 아니야.</div>
  <section class="relation-block" aria-label="선행 조건"><h3>① 선행 조건 · 무엇을 먼저 먹나?</h3>${reqLogic}${reqContent}</section>
  <section class="relation-block" aria-label="후속 개방"><h3>② 후속 카드 · 어떤 계열을 열어주나?</h3>${followContent}</section>
