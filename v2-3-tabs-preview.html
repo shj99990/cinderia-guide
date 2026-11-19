@@ -142,6 +142,8 @@ body.relation-lock{overflow:hidden}
 @media(max-width:720px){.verification-quick{padding:14px}.verification-quick h2{font-size:20px}.ver-detail{padding:12px}.ver-links button{flex:1 1 175px}}
 </style><style id="codex-v23-navigation">
 /* v2.3 focused navigation: one task per tab */
+#codexCardsView .tools{position:static;top:auto}
+.ui-choose-label{display:block;font-size:12px;color:#4d5964;margin:5px 0 10px}
 [hidden], .ui-panel[hidden] { display:none !important; }
 .ui-tabbar{position:sticky;top:0;z-index:19;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;background:rgba(244,241,236,.97);padding:10px 0 14px;margin:0 0 20px;border-bottom:1px solid #d9d6d1;backdrop-filter:blur(8px)}
 .ui-tab{background:#fdfbf7;border:1px solid #dfdbd4;border-radius:12px;padding:12px 9px;color:#56616b;font-size:13px;font-weight:800;cursor:pointer;min-width:0;min-height:49px;white-space:nowrap}
@@ -182,7 +184,7 @@ body[data-ui-view="verify"] .main,body[data-ui-view="engines"] .main{width:100%;
 <body data-ui-view="cards"><div class="frame"><aside class="sidebar"><div class="brand"><span class="brand-mark">✦</span> CINDERIA <span style="color:#7a8894;font-size:11px;font-weight:600">CODEX</span></div><div class="side-h">캐릭터 선택</div><nav class="navset" id="characterNav" aria-label="캐릭터"></nav><div class="sidebar-foot">설치 데이터 <b>0.6.12b</b><br>빌드 26496831<br>로컬에서 바로 열리는 오프라인 도감 · v2.3 탭형 도감<br><br>한국어 미등록 효과는 번역하지 않고 원문 표기를 보존했어.</div></aside>
 <main class="main"><header class="hero"><div class="top-eyebrow">REFERENCE / SKILLS & PASSIVES</div><h1>신데리아<br>스킬·패시브 통합 도감 <span style="font-size:14px;white-space:nowrap;color:#9d6072">v2.3 정식판</span></h1><p class="subtitle">기본 화면에서는 카드 효과와 선행조건을 먼저 볼 수 있어. 코드 검증과 빌드 엔진은 각각 별도 탭에서 확인해. <b>한글 이름·중국어 ID·효과·조건</b>을 검색하고, 빌드 계열별로 좁힌 뒤 카드를 눌러 선행·후속 연결도 확인할 수 있어.</p><div class="hero-stats"><span class="stat"><strong>5</strong>캐릭터</span><span class="stat"><strong>456</strong>기본 패시브</span><span class="stat"><strong>96</strong>스킬 데이터</span><span class="stat"><strong>456</strong>스킬 선택지</span><span class="stat"><strong>14</strong>기본 조작</span></div></header>
 <nav class="ui-tabbar" id="codexTabBar" role="tablist" aria-label="도감 화면 선택">
- <button id="uiTabCards" class="ui-tab is-active" role="tab" aria-controls="codexCardsView" aria-selected="true" data-ui-tab="cards" type="button"><span class="ui-tab-icon">▤</span> 카드 도감</button>
+ <button id="uiTabCards" class="ui-tab is-active" role="tab" aria-controls="codexCardsView" aria-selected="true" data-ui-tab="cards" type="button"><span class="ui-tab-icon">▤</span> 카드 설명</button>
  <button id="uiTabVerification" class="ui-tab" role="tab" aria-controls="codexVerificationView" aria-selected="false" data-ui-tab="verify" type="button"><span class="ui-tab-icon">◇</span> 코드 검증</button>
  <button id="uiTabEngines" class="ui-tab" role="tab" aria-controls="codexEnginesView" aria-selected="false" data-ui-tab="engines" type="button"><span class="ui-tab-icon">↗</span> 빌드 엔진</button>
 </nav>
@@ -205,7 +207,7 @@ body[data-ui-view="verify"] .main,body[data-ui-view="engines"] .main{width:100%;
 </section>
 <section class="ui-panel" id="codexEnginesView" role="tabpanel" aria-labelledby="uiTabEngines" hidden><section class="v2-engine-panel" id="v2EnginePanel" aria-label="빌드 엔진과 선행조건 탐색">
  <div class="v2-engine-heading"><span class="v2-kicker">빌드 경로 / 선행조건</span><h2>빌드 엔진 탐색</h2><p>캐릭터를 고른 뒤 엔진을 선택해. 필요한 카드와 획득 선행조건을 함께 확인할 수 있어. 실전 화력은 별도 근거가 필요해.</p></div>
- <div class="v21-engine-switch" role="group" aria-label="엔진 캐릭터 선택" id="v21EngineSwitch"></div>
+ <strong class="ui-choose-label">캐릭터 선택</strong><div class="v21-engine-switch" role="group" aria-label="엔진 캐릭터 선택" id="v21EngineSwitch"></div>
  <div class="v2-engine-grid" id="v21EngineGrid"></div>
  <p class="v2-source-note">기존 566개 카드 설명은 그대로 두고 메커니즘 검증 메모만 별도 추가했어. 기본 게임 · 모드 수정 · 로그 관측은 서로 다른 근거이며, 모드가 현재 설치되어 있다는 뜻은 아니야.</p>
  <p class="v2-source-note"><a href="https://docs.google.com/spreadsheets/d/1Td486ZPh9QDW9rfglmuEKv0Wgv_grsvhXctjygSmxyE/edit" target="_blank" rel="noopener noreferrer">성능·DPS 비교는 통합 빌드 평가 시트에서 확인</a> · 현재 도감은 오프라인에서도 열람 가능(근거 원본 링크는 온라인일 때만 열림)</p>
