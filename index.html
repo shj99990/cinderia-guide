@@ -431,7 +431,7 @@ function renderRivetMutex(){
  $('rivetMutexSummary').textContent='리벳 · '+pairs.length+'쌍 / 양방향 '+pairs.filter(p=>p.directions.length===2).length+'쌍 / 획득 순서에 따라 달라지는 관계 '+pairs.filter(p=>p.directions.length===1).length+'쌍';
  $('rivetMutexResults').innerHTML=pairs.map(p=>{
   const both=p.directions.length===2;
-  const a=p.first,b=p.second;
+  const a=both?p.first:p.directions[0].owned,b=both?p.second:p.directions[0].candidate;
   const note=both?'어느 쪽을 먼저 획득해도 다른 쪽은 신규 획득 후보에서 제외돼.':
    esc(p.directions[0].owned.name)+'을(를) 먼저 얻으면 '+esc(p.directions[0].candidate.name)+'이(가) 신규 획득 후보에서 제외돼. 역순은 원본 mutex만으로 동일하게 제한되지 않아.';
   const keys=[...new Set(p.directions.map(d=>d.token))].join(' / ');
